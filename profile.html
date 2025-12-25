@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShareFiles - Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body.light{background:#f5f8fa;color:#000;}
+    body.dark{background:#121212;color:#fff;}
+    header{background:#1da1f2;color:white;padding:10px;display:flex;justify-content:space-between;align-items:center;}
+    header button, header a{color:white;text-decoration:none;border:none;background:none;cursor:pointer;font-size:14px;}
+    .profile-box{
+      max-width:400px;
+      margin:50px auto;
+      padding:20px;
+      background:white;
+      border-radius:10px;
+      box-shadow:0 0 15px rgba(0,0,0,0.2);
+      text-align:center;
+    }
+    body.dark .profile-box{background:#1e1e1e;}
+    .profile-box img{width:100px;border-radius:50%;}
+    .profile-box input{
+      margin-top:10px;
+      padding:8px;
+      width:80%;
+      border-radius:5px;
+      border:1px solid #ccc;
+    }
+    .profile-box button{
+      margin-top:10px;
+      padding:10px 20px;
+      border:none;
+      border-radius:5px;
+      background:#1da1f2;
+      color:white;
+      cursor:pointer;
+    }
+    .profile-box button:hover{background:#0d95e8;}
+  </style>
+</head>
+<body class="light">
+  <header>
+    <h2>ShareFiles Profile</h2>
+    <div>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </header>
+
+  <div class="profile-box">
+    <img id="photo" src="" alt="Foto Profile">
+    <p id="email">Email</p>
+    <input type="text" id="nick" placeholder="Nickname baru">
+    <button onclick="updateNick()">Update Nickname</button>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <!-- App JS -->
+  <script src="app.js"></script>
+  <script>
+    // Update nickname
+    function updateNick(){
+      const nick = document.getElementById("nick").value;
+      if(nick.trim() === "") return alert("Nickname tidak boleh kosong");
+      firebase.auth().currentUser.updateProfile({ displayName: nick })
+        .then(()=> alert("Nickname berhasil diupdate!"))
+        .catch(err => alert(err.message));
+    }
+
+    // Tampilkan info user
+    firebase.auth().onAuthStateChanged(user=>{
+      if(user){
+        document.getElementById("photo").src = user.photoURL;
+        document.getElementById("email").innerText = user.email;
+        document.getElementById("nick").value = user.displayName || "";
+      } else {
+        // kalau belum login redirect ke login
+        window.location = "index.html";
+      }
+    });
+
+    // Dark/Light toggle
+    function toggleTheme(){
+      const body = document.body;
+      body.classList.toggle("dark");
+      body.classList.toggle("light");
+    }
+  </script>
+</body>
+</html>
