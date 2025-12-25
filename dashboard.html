@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShareFiles Timeline</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light">
+  <header>
+    <h2>ShareFiles</h2>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+    <a href="profile.html">Profile</a>
+  </header>
+
+  <div class="upload">
+    <input type="file" id="file">
+    <input type="text" id="text" placeholder="Tulis teks di sini...">
+    <button onclick="uploadFile()">Upload</button>
+  </div>
+
+  <div id="timeline">
+    <!-- Feed file muncul disini -->
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
