@@ -1,0 +1,225 @@
+/* =========================
+   GLOBAL STYLING
+========================= */
+body.light {
+  background: #f5f8fa;
+  color: #000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body.dark {
+  background: #121212;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  background: #1da1f2;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+header a, header button {
+  color: white;
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+header button:hover, header a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   LOGIN PAGE
+========================= */
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 300px;
+  margin: auto;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
+
+body.dark .login-box {
+  background: #1e1e1e;
+}
+
+.login-box h1 {
+  margin-bottom: 20px;
+  color: #1da1f2;
+}
+
+.login-box button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #1da1f2;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-box button:hover {
+  background: #0d95e8;
+}
+
+/* =========================
+   PROFILE PAGE
+========================= */
+.profile-box {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+body.dark .profile-box {
+  background: #1e1e1e;
+}
+
+.profile-box img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.profile-box input {
+  margin-top: 10px;
+  padding: 8px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.profile-box button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #1da1f2;
+  color: white;
+  cursor: pointer;
+}
+
+.profile-box button:hover {
+  background: #0d95e8;
+}
+
+/* =========================
+   UPLOAD SECTION (DASHBOARD)
+========================= */
+.upload {
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: inherit;
+}
+
+.upload input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.upload input[type="file"] {
+  border-radius: 5px;
+}
+
+.upload button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #1da1f2;
+  color: white;
+  cursor: pointer;
+}
+
+.upload button:hover {
+  background: #0d95e8;
+}
+
+/* =========================
+   TIMELINE / POSTS
+========================= */
+#timeline {
+  margin: 20px;
+}
+
+.post {
+  background: white;
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+body.dark .post {
+  background: #1e1e1e;
+}
+
+.post .avatar {
+  width: 40px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+}
+
+.post strong {
+  font-size: 16px;
+}
+
+.post p {
+  margin: 5px 0;
+  word-wrap: break-word;
+}
+
+.post a {
+  color: #1da1f2;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width: 600px){
+  .upload {
+    flex-direction: column;
+  }
+  .upload input[type="text"], .upload button, .upload input[type="file"] {
+    width: 100%;
+  }
+}
