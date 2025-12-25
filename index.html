@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShareFiles - Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{
+      font-family:sans-serif;
+      background:#f5f8fa;
+      margin:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+    .login-box{
+      background:white;
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 0 15px rgba(0,0,0,0.2);
+      text-align:center;
+      width:300px;
+    }
+    .login-box h1{
+      margin-bottom:20px;
+      color:#1da1f2;
+    }
+    .login-box button{
+      padding:10px 20px;
+      border:none;
+      border-radius:5px;
+      background:#1da1f2;
+      color:white;
+      cursor:pointer;
+      font-size:16px;
+    }
+    .login-box button:hover{
+      background:#0d95e8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h1>ShareFiles</h1>
+    <p>Login dengan akun Google kamu untuk mulai share file!</p>
+    <button onclick="loginGoogle()">Login Google</button>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <!-- App JS -->
+  <script src="app.js"></script>
+
+</body>
+</html>
